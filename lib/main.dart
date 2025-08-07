@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopora/core/config/localization/app_localization.dart';
 import 'package:shopora/core/config/themes/theme_data/theme_data_dark.dart';
 import 'package:shopora/core/config/themes/theme_data/theme_data_light.dart';
@@ -24,18 +25,29 @@ class Shopora extends StatelessWidget {
   const Shopora({super.key});
 
   Widget _buildMaterialApp(BuildContext context, ThemeMode themeMode, Locale locale) {
-    return MaterialApp(
-      ///localization
-      locale: locale,
-      localizationsDelegates: AppLocalization.localizationsDelegates,
-      supportedLocales: AppLocalization.supportedLocalesList,
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      builder: (_, child) {
+        return MaterialApp(
+          ////disable debug banner
+          debugShowCheckedModeBanner: false,
 
-      ///theme
-      theme: getlightTheme(),
-      darkTheme: getdarkTheme(),
-      themeMode: themeMode,
+          ///localization 
+          locale: locale,
+          localizationsDelegates: AppLocalization.localizationsDelegates,
+          supportedLocales: AppLocalization.supportedLocalesList,
 
-      home: LoginScreen(),
+          ///theme
+          theme: getlightTheme(),
+          darkTheme: getdarkTheme(),
+          themeMode: themeMode,
+
+          ///home
+          home: child,
+        );
+      },
+      child: LoginScreen(),
     );
   }
 

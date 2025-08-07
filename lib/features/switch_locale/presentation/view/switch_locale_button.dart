@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopora/features/switch_locale/presentation/view_model/cubit/switch_locale_cubit.dart';
 
 class SwitchLocaleButton extends StatelessWidget {
@@ -8,7 +9,7 @@ class SwitchLocaleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100),
+      padding: EdgeInsets.symmetric(horizontal: 100.w),
       child: ElevatedButton(
         onPressed: () {
           context.read<SwitchlocaleCubit>().switchLanguage();
