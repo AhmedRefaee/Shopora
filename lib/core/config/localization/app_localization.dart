@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:shopora/core/config/localization/locales/generated/l10n.dart'
+import 'package:shopora/generated/l10n.dart'
     show S;
 
 class AppLocalization {
