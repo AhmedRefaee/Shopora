@@ -1,0 +1,12 @@
+{
+    "login": "تسجيل الدخول",
+    "signUp": "تسجيل الخروج",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "emailIsRequired": "البريد الإلكتروني مطلوب",
+    "invalidEmail": "البريد الإلكتروني غير صالح",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "alreadyHaveAnAccount": "لديك حساب بالفعل؟",
+    "orLoginWithSocialAccount": "أو سجل باستخدام حساب اجتماعي"
+}

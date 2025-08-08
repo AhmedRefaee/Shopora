@@ -1,1 +1,12 @@
-{}
+{
+    "login": "Login",
+    "signUp": "Sign Up",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "emailIsRequired": "Email is required",
+    "invalidEmail": "Invalid email",
+    "forgotPassword": "Forgot your password?",
+    "alreadyHaveAnAccount": "Already have an account?",
+    "orLoginWithSocialAccount": "Or login with social account"
+}

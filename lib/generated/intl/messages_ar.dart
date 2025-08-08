@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a ar locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,27 +18,29 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
-      "Already have an account?",
+      "لديك حساب بالفعل؟",
     ),
-    "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "emailIsRequired": MessageLookupByLibrary.simpleMessage(
-      "Email is required",
+      "البريد الإلكتروني مطلوب",
     ),
     "forgotPassword": MessageLookupByLibrary.simpleMessage(
-      "Forgot your password?",
+      "هل نسيت كلمة المرور؟",
     ),
-    "invalidEmail": MessageLookupByLibrary.simpleMessage("Invalid email"),
-    "login": MessageLookupByLibrary.simpleMessage("Login"),
-    "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني غير صالح",
+    ),
+    "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "orLoginWithSocialAccount": MessageLookupByLibrary.simpleMessage(
-      "Or login with social account",
+      "أو سجل باستخدام حساب اجتماعي",
     ),
-    "password": MessageLookupByLibrary.simpleMessage("Password"),
-    "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "signUp": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
   };
 }
