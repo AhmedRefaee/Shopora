@@ -9,9 +9,11 @@ class SwitchThemeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 100.w),
-      child: ElevatedButton(
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+       
+        minimumSize: Size(48.h, 48.h),
+      ),
         onPressed: () {
           if (context.isDarkMode) {
             context.read<ThemeCubit>().switchTheme(ThemeMode.light);
@@ -20,7 +22,7 @@ class SwitchThemeButton extends StatelessWidget {
           }
         },
         child: const Icon(Icons.sunny),
-      ),
+      
     );
   }
 }

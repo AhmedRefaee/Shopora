@@ -8,14 +8,17 @@ class SwitchLocaleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 100.w),
-      child: ElevatedButton(
+    return
+    ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          minimumSize: Size(48.h, 48.h),
+        ),
         onPressed: () {
           context.read<SwitchlocaleCubit>().switchLanguage();
         },
         child: const Icon(Icons.language),
-      ),
+        
+      
     );
   }
 }
