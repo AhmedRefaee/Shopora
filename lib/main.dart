@@ -8,6 +8,7 @@ import 'package:shopora/core/config/localization/app_localization.dart';
 import 'package:shopora/core/config/themes/theme_data/theme_data_dark.dart';
 import 'package:shopora/core/config/themes/theme_data/theme_data_light.dart';
 import 'package:shopora/features/auth/login/presentation/view/login_screen.dart';
+import 'package:shopora/features/auth/sign_up/presentation/view/sign_up_screen.dart';
 import 'package:shopora/features/switch_locale/presentation/view_model/cubit/switch_locale_cubit.dart';
 import 'package:shopora/features/switch_theme/presentation/view_model/cubit/theme_cubit.dart';
 
@@ -41,13 +42,15 @@ class Shopora extends StatelessWidget {
           ///theme
           theme: getlightTheme(),
           darkTheme: getdarkTheme(),
+          themeAnimationCurve: Curves.easeInOut,
+          themeAnimationDuration: const Duration(milliseconds: 500),
           themeMode: themeMode,
 
           ///home
           home: child,
         );
       },
-      child: LoginScreen(),
+      child: SignUpScreen(),
     );
   }
 
