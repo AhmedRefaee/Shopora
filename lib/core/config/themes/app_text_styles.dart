@@ -47,7 +47,7 @@ class AppTextStyles {
   static TextStyle get sixteen => TextStyle(
     fontSize: 16.sp,
     fontFamily: AppFonts.metropolis,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0,
   );
 

@@ -50,7 +50,7 @@ class Shopora extends StatelessWidget {
           home: child,
         );
       },
-      child: SignUpScreen(),
+      child: LoginScreen(),
     );
   }
 
