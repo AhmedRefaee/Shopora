@@ -11,11 +11,14 @@ class CustomTextfield extends StatefulWidget {
   final String? Function(String?)? validator;
   final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
+  final VoidCallback? onFieldSubmitted;
   final TextInputType keyboardType;
+  final TextInputAction textInputAction;
   final bool obscureText;
   final bool enableVisibilityToggle;
   final ValidationState validationState;
   final Widget? prefixIcon;
+  final FocusNode? focusNode;
 
   const CustomTextfield({
     super.key,
@@ -24,11 +27,14 @@ class CustomTextfield extends StatefulWidget {
     this.validator,
     this.controller,
     this.onChanged,
+    this.onFieldSubmitted,
     this.keyboardType = TextInputType.text,
+    this.textInputAction = TextInputAction.next,
     this.obscureText = false,
     this.enableVisibilityToggle = false,
     this.validationState = ValidationState.none,
     this.prefixIcon,
+    this.focusNode,
   });
 
   @override
@@ -46,20 +52,26 @@ class _CustomTextfieldState extends State<CustomTextfield> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: widget.controller,
-      validator: widget.validator,
-      style: AppTextStyles.fourteen,
-      keyboardType: widget.keyboardType,
-      obscureText: widget.enableVisibilityToggle
-          ? _obscured
-          : widget.obscureText,
-      onChanged: widget.onChanged,
-      decoration: InputDecoration(
-        labelText: widget.label,
-        hintText: widget.hint,
-        prefixIcon: widget.prefixIcon,
-        suffixIcon: _buildSuffixIcons(),
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: TextFormField(
+        controller: widget.controller,
+        validator: widget.validator,
+        style: AppTextStyles.fourteen,
+        keyboardType: widget.keyboardType,
+        textInputAction: widget.textInputAction,
+        focusNode: widget.focusNode,
+        obscureText: widget.enableVisibilityToggle
+            ? _obscured
+            : widget.obscureText,
+        onChanged: widget.onChanged,
+        onFieldSubmitted: (_) => widget.onFieldSubmitted?.call(),
+        decoration: InputDecoration(
+          labelText: widget.label,
+          hintText: widget.hint,
+          prefixIcon: widget.prefixIcon,
+          suffixIcon: _buildSuffixIcons(),
+        ),
       ),
     );
   }
