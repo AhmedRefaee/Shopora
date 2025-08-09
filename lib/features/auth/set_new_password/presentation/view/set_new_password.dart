@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopora/core/config/themes/app_text_styles.dart';
 import 'package:shopora/core/utils/elements/back_arrow_button.dart';
-import 'package:shopora/core/utils/testing/testing_row.dart';
 import 'package:shopora/features/auth/set_new_password/presentation/view/widgets/new_password_form.dart';
 import 'package:shopora/features/auth/set_new_password/presentation/view/widgets/save_button.dart';
 import 'package:shopora/features/auth/set_new_password/presentation/view_model/set_new_password_cubit/set_new_password_cubit.dart';
@@ -31,14 +30,7 @@ class _SetNewPasswordScreenState extends State<SetNewPasswordScreen> {
         onTap: () => FocusScope.of(context).unfocus(),
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          body: SafeArea(
-            child: Stack(
-              children: [
-                _buildMainContent(),
-                _buildTestingRow(),
-              ],
-            ),
-          ),
+          body: SafeArea(child: Stack(children: [_buildMainContent()])),
         ),
       ),
     );
@@ -83,15 +75,6 @@ class _SetNewPasswordScreenState extends State<SetNewPasswordScreen> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: _horizontalPadding.w),
       child: const SaveButton(),
-    );
-  }
-
-  Widget _buildTestingRow() {
-    return const Positioned(
-      top: 0,
-      left: 0,
-      right: 0,
-      child: TestingRow(),
     );
   }
 }
