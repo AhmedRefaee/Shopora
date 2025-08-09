@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopora/features/switch_locale/presentation/view/switch_locale_button.dart';
-import 'package:shopora/features/switch_theme/presentation/view/switch_theme_button.dart';
+import 'package:shopora/features/settings/switch_locale/presentation/view/switch_locale_button.dart';
+import 'package:shopora/features/settings/switch_theme/presentation/view/switch_theme_button.dart';
 
 class TestingRow extends StatefulWidget {
   const TestingRow({super.key});
