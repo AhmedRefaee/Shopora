@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:shopora/core/config/themes/app_colors.dart';
 import 'package:shopora/core/config/themes/app_text_styles.dart';
 import 'package:shopora/core/utils/elements/back_arrow_button.dart';
-import 'package:shopora/core/utils/testing/testing_row.dart';
-import 'package:shopora/core/utils/widgets/custom_textfield.dart';
+import 'package:shopora/features/auth/email_verification/presentation/view/email_verification_screen.dart';
 import 'package:shopora/features/auth/forgot_password/presentation/view/widgets/email_textfield.dart';
 import 'package:shopora/features/auth/forgot_password/presentation/view/widgets/send_button.dart';
-import 'package:shopora/features/auth/login/presentation/view/widgets/forgot_password_btn.dart';
-import 'package:shopora/features/auth/login/presentation/view/widgets/login_button.dart';
-import 'package:shopora/features/auth/login/presentation/view/widgets/login_form.dart';
-import 'package:shopora/features/auth/social_account_login/presentation/view/social_account_login.dart';
+import 'package:shopora/features/auth/forgot_password/presentation/view_model/forgot_password_cubit/forgot_password_cubit.dart';
 import 'package:shopora/generated/l10n.dart';
-import 'package:shopora/main.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -23,59 +17,79 @@ class ForgotPasswordScreen extends StatefulWidget {
 }
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  static const double _verticalPadding = 10;
+  static const double _backButtonSpacing = 25;
+  static const double _titleSpacing = 75;
+  static const double _buttonSpacing = 70;
+  static const double _horizontalPadding = 15;
+
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-      },
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: SafeArea(
-          child: Stack(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.h),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BackArrowButton(),
-                    SizedBox(height: 25.h),
-
-                    ///forgot password title
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.w),
-
-                      child: Text(
-                        S.of(context).forgotPassword,
-                        style: AppTextStyles.headline1,
-                      ),
-                    ),
-
-                    SizedBox(height: 75.h),
-
-                    ///email textfield
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.w),
-                      child: EmailTextfield(),
-                    ),
-                
-                    SizedBox(height: 70.h),
-
-                    ///send button
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.w),
-                      child: SendButton(),
-                    ),
-                   
-                  ],
-                ),
+    return BlocProvider(
+      create: (context) => ForgotPasswordCubit(),
+      child: BlocListener<ForgotPasswordCubit, ForgotPasswordState>(
+        listener: (context, state) {
+          if (state is ForgotPasswordSuccess) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const EmailVerificationScreen(),
               ),
-              Positioned(top: 0, left: 0, right: 0, child: TestingRow()),
-            ],
+            );
+          }
+        },
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Scaffold(
+            resizeToAvoidBottomInset: false,
+            body: SafeArea(
+              child: _buildMainContent(),
+            ),
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildMainContent() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: _verticalPadding.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const BackArrowButton(),
+          SizedBox(height: _backButtonSpacing.h),
+          _buildTitle(),
+          SizedBox(height: _titleSpacing.h),
+          _buildEmailField(),
+          SizedBox(height: _buttonSpacing.h),
+          _buildSendButton(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTitle() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: _horizontalPadding.w),
+      child: Text(
+        S.of(context).forgotPassword,
+        style: AppTextStyles.headline1,
+      ),
+    );
+  }
+
+  Widget _buildEmailField() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: _horizontalPadding.w),
+      child: const EmailTextfield(),
+    );
+  }
+
+  Widget _buildSendButton() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: _horizontalPadding.w),
+      child: const SendButton(),
     );
   }
 }
