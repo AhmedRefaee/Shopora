@@ -7,10 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopora/core/config/localization/app_localization.dart';
 import 'package:shopora/core/config/themes/theme_data/theme_data_dark.dart';
 import 'package:shopora/core/config/themes/theme_data/theme_data_light.dart';
+import 'package:shopora/features/auth/email_verification/presentation/view/email_verification_screen.dart';
+import 'package:shopora/features/auth/forgot_password/presentation/view/forgot_password_screen.dart';
 import 'package:shopora/features/auth/login/presentation/view/login_screen.dart';
+import 'package:shopora/features/auth/set_new_password/presentation/view/set_new_password.dart';
 import 'package:shopora/features/auth/sign_up/presentation/view/sign_up_screen.dart';
-import 'package:shopora/features/switch_locale/presentation/view_model/cubit/switch_locale_cubit.dart';
-import 'package:shopora/features/switch_theme/presentation/view_model/cubit/theme_cubit.dart';
+import 'package:shopora/features/settings/switch_locale/presentation/view_model/cubit/switch_locale_cubit.dart';
+import 'package:shopora/features/settings/switch_theme/presentation/view_model/cubit/theme_cubit.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,7 +53,7 @@ class Shopora extends StatelessWidget {
           home: child,
         );
       },
-      child: LoginScreen(),
+      child: const SignUpScreen(),
     );
   }
 
