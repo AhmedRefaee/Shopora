@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopora/core/config/themes/app_colors.dart';
 import 'package:shopora/core/config/themes/app_text_styles.dart';
+import 'package:shopora/core/config/themes/theme_extensions/theme_extenstions.dart';
 
 enum ValidationState { none, valid, invalid }
 
@@ -74,7 +74,11 @@ class _CustomTextfieldState extends State<CustomTextfield> {
             _obscured ? Icons.visibility : Icons.visibility_off,
             size: 20.sp,
           ),
-          onPressed: () => setState(() => _obscured = !_obscured),
+          onPressed: () {
+            setState(() {
+              _obscured = !_obscured;
+            });
+          },
         ),
       );
     }
@@ -87,15 +91,19 @@ class _CustomTextfieldState extends State<CustomTextfield> {
               : Icons.close,
           size: 20.sp,
           color: widget.validationState == ValidationState.valid
-              ? AppColors.shoporaSuccess
-              : AppColors.shoporaError,
+              ? context.colors.success
+              : context.colors.error,
         ),
       );
     }
 
-    if (icons.isEmpty) return null;
-    if (icons.length == 1) return icons.first;
-
-    return Row(mainAxisSize: MainAxisSize.min, children: icons);
+    return icons.isEmpty
+        ? null
+        : icons.length == 1
+            ? icons.first
+            : Row(
+                mainAxisSize: MainAxisSize.min,
+                children: icons,
+              );
   }
 }

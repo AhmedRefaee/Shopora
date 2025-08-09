@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopora/core/config/themes/app_colors.dart' show AppColors;
 import 'package:shopora/core/config/themes/app_fonts.dart';
 import 'package:shopora/core/config/themes/app_text_styles.dart';
+import 'package:shopora/core/config/themes/custom_theme_extension.dart';
 
 ThemeData getdarkTheme(){
 return ThemeData(
@@ -16,6 +17,11 @@ return ThemeData(
       seedColor: AppColors.shoporaDarkPrimary,
       brightness: Brightness.dark,
     ),
+
+    extensions: [
+      CustomColors.dark,
+    ],
+
     textTheme: ThemeData.dark().textTheme.apply(
       fontFamily: AppFonts.metropolis,
       bodyColor: AppColors.shoporaDarkWhite,
@@ -36,6 +42,8 @@ return ThemeData(
 
     inputDecorationTheme: InputDecorationTheme(
       labelStyle: AppTextStyles.fourteen.copyWith(color: AppColors.shoporaDarkGray),
+      fillColor: AppColors.shoporaDark,
+      filled: true,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4.r),
         borderSide: BorderSide(color: AppColors.shoporaDark),

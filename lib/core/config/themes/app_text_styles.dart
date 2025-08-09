@@ -32,7 +32,7 @@ class AppTextStyles {
     fontSize: 14.sp,
     fontFamily: AppFonts.metropolis,
     fontWeight: FontWeight.w400,
-    letterSpacing: -15,
+    letterSpacing: 0.25, // Fixed from -15
     height: 1.5,
   );
 

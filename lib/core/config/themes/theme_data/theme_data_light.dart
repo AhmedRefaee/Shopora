@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopora/core/config/themes/app_colors.dart';
 import 'package:shopora/core/config/themes/app_fonts.dart';
 import 'package:shopora/core/config/themes/app_text_styles.dart';
+import 'package:shopora/core/config/themes/custom_theme_extension.dart';
 
 ThemeData getlightTheme() {
   return ThemeData(
@@ -16,6 +17,11 @@ ThemeData getlightTheme() {
       seedColor: AppColors.shoporaPrimary,
       brightness: Brightness.light,
     ),
+
+    extensions: [
+      CustomColors.light,
+    ],
+
     textTheme: ThemeData.light().textTheme.apply(
       fontFamily: AppFonts.metropolis,
       bodyColor: AppColors.shoporaBlack,
