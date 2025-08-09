@@ -22,16 +22,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "almostThere": MessageLookupByLibrary.simpleMessage("Almost there"),
+    "almostThereDescription": MessageLookupByLibrary.simpleMessage(
+      "Please enter the 6-digit code sent to your email ",
+    ),
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
+    ),
+    "codeResentSuccess": MessageLookupByLibrary.simpleMessage(
+      "A new verification code has been sent to your email. Please check your inbox.",
+    ),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
+      "Didn’t receive any code?",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailIsRequired": MessageLookupByLibrary.simpleMessage(
       "Email is required",
     ),
-    "forgotPassword": MessageLookupByLibrary.simpleMessage(
-      "Forgot your password?",
-    ),
+    "forVerification": MessageLookupByLibrary.simpleMessage("for verification"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot password"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage("Invalid email"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
@@ -39,6 +49,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "Or login with social account",
     ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "resend": MessageLookupByLibrary.simpleMessage("Resend"),
+    "save": MessageLookupByLibrary.simpleMessage("Save"),
+    "send": MessageLookupByLibrary.simpleMessage("Send"),
+    "setANewPassword": MessageLookupByLibrary.simpleMessage(
+      "Set a new password",
+    ),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "verify": MessageLookupByLibrary.simpleMessage("Verify"),
   };
 }

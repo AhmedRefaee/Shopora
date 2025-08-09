@@ -22,16 +22,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "almostThere": MessageLookupByLibrary.simpleMessage("تقريباً انتهينا"),
+    "almostThereDescription": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال الرمز المكون من 6 أرقام المرسل إلى بريدك الإلكتروني ",
+    ),
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟",
     ),
+    "codeResentSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال رمز التحقق الجديد إلى بريدك الإلكتروني. يرجى التحقق من صندوق الوارد.",
+    ),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
+    "didntReceiveCode": MessageLookupByLibrary.simpleMessage("لم تتلق أي رمز؟"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "emailIsRequired": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني مطلوب",
     ),
-    "forgotPassword": MessageLookupByLibrary.simpleMessage(
-      "هل نسيت كلمة المرور؟",
-    ),
+    "forVerification": MessageLookupByLibrary.simpleMessage("للتحقق"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني غير صالح",
     ),
@@ -41,6 +51,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "أو سجل باستخدام حساب اجتماعي",
     ),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
-    "signUp": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
+    "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+    "send": MessageLookupByLibrary.simpleMessage("إرسال"),
+    "setANewPassword": MessageLookupByLibrary.simpleMessage(
+      "إعادة كلمة المرور",
+    ),
+    "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "verify": MessageLookupByLibrary.simpleMessage("تحقق"),
   };
 }

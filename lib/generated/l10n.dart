@@ -79,6 +79,16 @@ class S {
     return Intl.message('Password', name: 'password', desc: '', args: []);
   }
 
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email is required`
   String get emailIsRequired {
     return Intl.message(
@@ -99,10 +109,10 @@ class S {
     );
   }
 
-  /// `Forgot your password?`
+  /// `Forgot password`
   String get forgotPassword {
     return Intl.message(
-      'Forgot your password?',
+      'Forgot password',
       name: 'forgotPassword',
       desc: '',
       args: [],
@@ -127,6 +137,86 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message('Send', name: 'send', desc: '', args: []);
+  }
+
+  /// `Verify`
+  String get verify {
+    return Intl.message('Verify', name: 'verify', desc: '', args: []);
+  }
+
+  /// `Almost there`
+  String get almostThere {
+    return Intl.message(
+      'Almost there',
+      name: 'almostThere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the 6-digit code sent to your email `
+  String get almostThereDescription {
+    return Intl.message(
+      'Please enter the 6-digit code sent to your email ',
+      name: 'almostThereDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `for verification`
+  String get forVerification {
+    return Intl.message(
+      'for verification',
+      name: 'forVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn’t receive any code?`
+  String get didntReceiveCode {
+    return Intl.message(
+      'Didn’t receive any code?',
+      name: 'didntReceiveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend`
+  String get resend {
+    return Intl.message('Resend', name: 'resend', desc: '', args: []);
+  }
+
+  /// `A new verification code has been sent to your email. Please check your inbox.`
+  String get codeResentSuccess {
+    return Intl.message(
+      'A new verification code has been sent to your email. Please check your inbox.',
+      name: 'codeResentSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set a new password`
+  String get setANewPassword {
+    return Intl.message(
+      'Set a new password',
+      name: 'setANewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
   }
 }
 
